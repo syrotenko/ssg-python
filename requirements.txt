@@ -1,0 +1,4 @@
+beautifulsoup4==4.12.3
+soupsieve==2.6
+requests==2.32.3
+user-agent==0.1.10
