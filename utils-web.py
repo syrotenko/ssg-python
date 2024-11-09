@@ -1,17 +1,9 @@
-import os
-import datetime
+import time
 import requests
-import json
-import csv
+from threading import Thread
 
 import bs4
 from user_agent import generate_user_agent
-
-import os
-import urllib.request, sys
-from threading import Thread
-import requests
-import time
 
 import utils
 
