@@ -22,7 +22,13 @@ def generate_headers_with_user_agent(device_type='desktop', os=('mac', 'linux'))
 
 def get_page(url, headers, timeout=60):
         headers = headers or generate_headers_with_user_agent()
-        return requests.get(url, headers=headers, timeout=timeout)
+        resp = requests.get(url, headers=headers, timeout=timeout)
+        # with proxy
+        proxy = '192.168.0.1'
+        proxies = {'http': 'http://' + proxy,
+                   'https': 'http://' + proxy}
+        resp = requests.get(url, proxies=proxies, headers=headers, timeout=timeout)
+        return resp
 
 
 def save_page_resp(page_str, path):
